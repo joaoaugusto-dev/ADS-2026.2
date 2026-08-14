@@ -1,5 +1,8 @@
-- Front deve ser em REACT OBRIGATÓRIAMENTE
-- O sistema deve OBRIGATORIAMENTE responsivo
-- React, Tailwind e CSS
+# Introdução a Desenvolvimento de Interfaces Web
+
+- Front-end deve ser em **React** (obrigatório)
+- TypeScript deve ser utilizado no front-end
+- Stack: React, Tailwind e CSS
+- O sistema deve ser **obrigatoriamente responsivo**
 - Integrar aplicações front-end a APIs RESTful
-- Java script para eventos no site
+- JavaScript para eventos no site
