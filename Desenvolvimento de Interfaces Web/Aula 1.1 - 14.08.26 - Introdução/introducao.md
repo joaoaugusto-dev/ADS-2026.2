@@ -1,0 +1,3 @@
+- Frontend deve ser em REACT (Obrigatoriamente)
+- O sistema deve OBRIGATORIAMENTE responsivo
+- TypeScript deve ser utilizado no frontend
