@@ -27,9 +27,9 @@
 ## O que é Cloud — o que a define
 
 - **Acesso ubíquo:** disponível em qualquer lugar, a qualquer momento (via internet)
-- **Esforço mínimo:**
-- **Recursos compartilhados:**
-- **Sob demanda:**
+- **Esforço mínimo:** Permite contratar, gerenciar e liberar recursos rapidamente sem a necessidade de interações humanas diretas com o provedor de serviços
+- **Recursos compartilhados:** Utiliza um modelo de pool de recursos para atender a múltiplos usuários simultaneamente, alocando recursos físicos e virtuais dinamicamente conforme a demanda
+- **Sob demanda:** O usuário pode provisionar recursos de computação (como processamento e armazenamento) de forma automática e independente, pagando apenas pelo que consome
 
 ---
 
