@@ -1,3 +1,5 @@
-- Frontend deve ser em REACT (Obrigatoriamente)
+- Front deve ser em REACT OBRIGATÓRIAMENTE
 - O sistema deve OBRIGATORIAMENTE responsivo
-- TypeScript deve ser utilizado no frontend
+- React, Tailwind e CSS
+- Integrar aplicações front-end a APIs RESTful
+- Java script para eventos no site
