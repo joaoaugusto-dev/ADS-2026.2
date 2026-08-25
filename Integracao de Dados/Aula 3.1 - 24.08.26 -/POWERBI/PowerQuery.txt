@@ -1,0 +1,31 @@
+let
+    Origem = #"Cabeçalhos promovidos",
+
+    // Tipagem correta: decimais como number, NCM como text (preserva zero à esquerda)
+    #"Tipos alterados" = Table.TransformColumnTypes(Origem, {
+        {"dataVenda", type datetime},
+        {"codigoProduto", Int64.Type},
+        {"quantidadeVenda", type number},
+        {"totalVenda", type number},
+        {"codigoProduto_produto", Int64.Type},
+        {"ncmproduto", type text},
+        {"ncm_tabela", type text},
+        {"ncm_grupo", type text}
+    }),
+
+    // Corrige NCMs que perderam o zero à esquerda (padrão NCM = 8 dígitos)
+    #"NCM padronizado" = Table.TransformColumns(#"Tipos alterados", {
+        {"ncmproduto", each Text.PadStart(_, 8, "0"), type text},
+        {"ncm_tabela", each Text.PadStart(_, 8, "0"), type text}
+    }),
+
+    // Converte a string "NULL" em nulo real na coluna ncm_grupo
+    #"NULL tratado" = Table.ReplaceValue(#"NCM padronizado", "NULL", null, Replacer.ReplaceValue, {"ncm_grupo"}),
+
+    // Remove coluna duplicada (codigoProduto_produto == codigoProduto)
+    #"Coluna duplicada removida" = Table.RemoveColumns(#"NULL tratado", {"codigoProduto_produto"}),
+
+    // Remove linhas totalmente em branco, se houver
+    #"Linhas vazias removidas" = Table.SelectRows(#"Coluna duplicada removida", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+in
+    #"Linhas vazias removidas"
