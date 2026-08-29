@@ -14,6 +14,16 @@
 <body>
     <!-- CSS Inline -->
     <!-- <h1 style="color: red">Título</h1> -->
+    <header>
+        <div class="header-content">
+            <a href="#hero" class="logo">DevWeb</a>
+            <nav class="menu">
+                <a href="#projetos">Projetos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
     <main>
         <section id="hero">
             <p class="fundo">
@@ -23,13 +33,30 @@
             <p>
                 Interface desenvolvidas durante o semestre
             </p>
+            <a href="#projetos" class="btn">Ver projetos</a>
+        </section>
+        <section class="projects-section" id="projetos">
+            <div class-="section-header">
+                <h2>Projetos</h2>
+                <p>
+                    Alguns projetos desenvolvidos durante o semestre.
+                </p>
+            </div>
+            <div class="projects">
+                <article class="card">
+                    <span class="badge">
+                        Destaque
+                    </span>
+                    <img src="https://placehold.co/600x360" alt="Imagem do Projeto">
+                    <div class="card-content">
+                        <h3>Sistema de Biblioteca</h3>
+                        <p>Aplicação para gerenciamento de livros e empréstimos.</p>
+                        <a href="#" class="btn">Ver detalhes</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
-    <div>
-        <p>
-            Meu parágrafo
-        </p>
-    </div>
 </body>
 
 </html>
