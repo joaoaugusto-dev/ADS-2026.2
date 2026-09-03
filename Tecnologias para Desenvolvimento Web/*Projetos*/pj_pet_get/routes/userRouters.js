@@ -10,8 +10,9 @@ const { registerValidationRules, validate } = require('../helpers/userValidator'
 //Rotas
 //Registrar
 router.post('/register', registerValidationRules(), validate, UserController.register);
-
 //Listar todos
-router.get('/', UserController.listall);
+router.get('/', UserController.listall)
+//rota de login
+router.post('/login', UserController.login)
 
 module.exports = router;

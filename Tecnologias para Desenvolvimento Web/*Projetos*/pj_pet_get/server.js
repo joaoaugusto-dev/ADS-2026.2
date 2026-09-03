@@ -1,3 +1,6 @@
+//carregar variaveis de ambiente
+require('dotenv').config();
+
 //requere o express
 const express = require('express');
 //instancia do express
