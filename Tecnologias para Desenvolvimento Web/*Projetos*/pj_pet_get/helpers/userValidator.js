@@ -1,27 +1,25 @@
-//Requerer as bibliotecas do Validator
-const { body, validationResult } = require('express-validator');
+// requerer as bibliotecas do validator
+const { body, validationResult } = require('express-validator')
 
 //Regras de Validações
 const registerValidationRules = () => {
     return [
-        body('name').notEmpty().withMessage('O nome é obrigatório'),
-        body('email').notEmpty().withMessage('O email é obrigatório e deve se válido'),
-        body('password').notEmpty().withMessage('A senha é obrigatória'),
-        body('phone').notEmpty().withMessage('O telefone é obrigatório e deve se válido'),
+        body('name').notEmpty().withMessage('O nome é Obrigatório'),
+        body('email').notEmpty().withMessage('O E-email é obrigatório e deve ser válido'),
+        body('password').notEmpty().withMessage('A senha é Obrigatória'),
+        body('phone').notEmpty().withMessage('O telefone é Obrigatório'),
     ]
-};
+}
 
-//Validações
+//Validação
 const validate = (req, res, next) => {
-    const erros = validationResult(req)
-    if (erros.isEmpty()) {
+    const errors = validationResult(req)
+    if(errors.isEmpty()){
         return next()
     }
     //Retornar o primeiro erro encontrado
-    return res.status(422).json({
-        message: erros.array()[0].msg
-    })
-};
+    return res.status(422).json({message: errors.array()[0].msg})
+}
 
 module.exports = {
     registerValidationRules,
