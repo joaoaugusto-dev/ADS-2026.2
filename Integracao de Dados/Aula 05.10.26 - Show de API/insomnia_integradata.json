@@ -1,0 +1,162 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "resources": [
+    {
+      "_id": "wrk_integradata",
+      "_type": "workspace",
+      "name": "IntegraData",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_base",
+      "_type": "environment",
+      "parentId": "wrk_integradata",
+      "name": "Base Environment",
+      "data": {
+        "host": "http://localhost"
+      }
+    },
+    {
+      "_id": "req_0",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "1 - Cliente (SQLite)",
+      "method": "GET",
+      "url": "{{ _.host }}:5001/cliente/1",
+      "metaSortKey": 0,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_1",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "1b - Cliente inexistente (404)",
+      "method": "GET",
+      "url": "{{ _.host }}:5001/cliente/99",
+      "metaSortKey": 1,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_2",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "2 - Compras (PostgreSQL)",
+      "method": "GET",
+      "url": "{{ _.host }}:5002/compras/1",
+      "metaSortKey": 2,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_3",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "3 - Financeiro (Firebase)",
+      "method": "GET",
+      "url": "{{ _.host }}:5003/financeiro/1",
+      "metaSortKey": 3,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_4",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "3b - Financeiro inexistente (404)",
+      "method": "GET",
+      "url": "{{ _.host }}:5003/financeiro/99",
+      "metaSortKey": 4,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_5",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "4 - Consolidar cliente 1 (MongoDB)",
+      "method": "POST",
+      "url": "{{ _.host }}:5004/consolidar/1",
+      "metaSortKey": 5,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_6",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "4 - Consolidar cliente 2 (MongoDB)",
+      "method": "POST",
+      "url": "{{ _.host }}:5004/consolidar/2",
+      "metaSortKey": 6,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_7",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "4b - Consolidar inexistente (404)",
+      "method": "POST",
+      "url": "{{ _.host }}:5004/consolidar/99",
+      "metaSortKey": 7,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_8",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "5 - Consolidados",
+      "method": "GET",
+      "url": "{{ _.host }}:5005/consolidados",
+      "metaSortKey": 8,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_9",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "6 - Exportar Excel",
+      "method": "GET",
+      "url": "{{ _.host }}:5006/exportar",
+      "metaSortKey": 9,
+      "headers": [],
+      "body": {}
+    },
+    {
+      "_id": "req_10",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "7 - Importar clientes (CSV)",
+      "method": "POST",
+      "url": "{{ _.host }}:5007/importar-clientes",
+      "metaSortKey": 10,
+      "headers": [],
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "name": "arquivo",
+            "type": "file",
+            "fileName": "clientes.csv"
+          }
+        ]
+      }
+    },
+    {
+      "_id": "req_11",
+      "_type": "request",
+      "parentId": "wrk_integradata",
+      "name": "8 - Ranking de clientes",
+      "method": "GET",
+      "url": "{{ _.host }}:5008/ranking-clientes",
+      "metaSortKey": 11,
+      "headers": [],
+      "body": {}
+    }
+  ]
+}
