@@ -1,6 +1,7 @@
-import type { Ticket } from "../types/Ticket";
+import type { Ticket } from "../types/Ticket"
 
 export const initialTickets: Ticket[] = [
+
     {
         id: 1,
         title: "Problema no login",
@@ -11,7 +12,7 @@ export const initialTickets: Ticket[] = [
     {
         id: 2,
         title: "Atualização de cadastro",
-        description: "Cliente solicitou alteração de endereço",
+        description: "Cliente solicitou alteração do endereço",
         status: "Em andamento",
         priority: "Media"
     },
@@ -36,4 +37,5 @@ export const initialTickets: Ticket[] = [
         status: "Em andamento",
         priority: "Baixa"
     }
+
 ]

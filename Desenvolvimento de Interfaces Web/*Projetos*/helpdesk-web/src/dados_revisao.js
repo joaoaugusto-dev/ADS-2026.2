@@ -15,3 +15,6 @@ const tickets = [
 ]
 
 tickets.push({ id: 3, title: "titulo 3" })
+
+const numbers = [1, 2, 3, 4, 5]
+const filteredNumbers = numbers.filter((number) => number > 2)

@@ -1,4 +1,4 @@
-export type TicketStatus =
+export type TicketStatus = 
     | "Aberto"
     | "Em andamento"
     | "Concluido"
@@ -8,10 +8,14 @@ export type TicketPriority =
     | "Media"
     | "Alta"
 
-    export type Ticket = {
-        id: number
-        title:string
-        description: string
-        status: TicketStatus
-        priority: TicketPriority
-    }
+export type TicketFilter = 
+    | "Todos"
+    | TicketStatus
+
+export type Ticket = {
+    id: number
+    title: string
+    description: string
+    status: TicketStatus
+    priority: TicketPriority
+}
