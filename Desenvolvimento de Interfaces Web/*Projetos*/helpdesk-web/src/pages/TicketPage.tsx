@@ -1,15 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Header } from "../components/Header"
 import { Panel } from "../components/Panel"
 import { TicketCard } from "../components/TicketCard"
-import { initialTickets } from "../data/ticket"
-import type { TicketFilter } from "../types/Ticket"
+import type { Ticket, TicketFilter } from "../types/Ticket"
+import { ticketService } from "../services/ticketService"
 
 export function TicketPage(){
 
-const [filter, setFilter] = useState<TicketFilter>("Todos")
+  const [tickets, setTickets] = useState<Ticket[]>([])
 
-  const filteredTickets = initialTickets.filter(
+  const [filter, setFilter] = useState<TicketFilter>("Todos")
+
+  const [loading, setLoading] = useState(true)
+
+  const [error, setError] = useState<string | null>(null)
+
+  const filteredTickets = tickets.filter(
     (ticket) => {
       if(filter === "Todos"){
         return true
@@ -18,6 +24,45 @@ const [filter, setFilter] = useState<TicketFilter>("Todos")
       return ticket.status === filter
     }
   )
+
+  useEffect(() => {
+    async function loadTickets(){
+
+      try{
+
+        setLoading(true)
+        setError(null)
+
+        const data = await ticketService.getAll()
+
+        setTickets(data)
+
+      } catch(error) {
+
+        setError("Não foi possível carregar os chamados")
+
+      } finally {
+        setLoading(false)
+      }
+
+    }
+
+    loadTickets()
+  })
+
+  if(loading) {
+    return (
+      <p className="text-slate-500">
+        Carregando chamados...
+      </p>
+    )
+  }
+
+  if(error){
+    <div className="rounded-lg bg-red-50 p-4 text-red-700">
+      {error}
+    </div>
+  }
 
   return (
     <>

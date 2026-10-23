@@ -19,3 +19,10 @@ export type Ticket = {
     status: TicketStatus
     priority: TicketPriority
 }
+
+export type CreateTicketInput = {
+    title: string
+    description: string
+    status: TicketStatus
+    priority: TicketPriority
+}
