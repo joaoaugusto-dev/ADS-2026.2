@@ -26,7 +26,7 @@ export function Navbar(){
                         Inicio
                     </NavLink>
 
-                    <NavLink to="/chamados" end className={ ({isActive}) => 
+                    <NavLink to="/chamados" className={ ({isActive}) => 
                         `${linkClass} ${
                             isActive
                             ? "bg-blue-600 text-white"
@@ -36,7 +36,7 @@ export function Navbar(){
                         Chamados
                     </NavLink>
 
-                    <NavLink to="/chamado/novo" end className={ ({isActive}) => 
+                    <NavLink to="/chamado/novo" className={ ({isActive}) => 
                         `${linkClass} ${
                             isActive
                             ? "bg-blue-600 text-white"

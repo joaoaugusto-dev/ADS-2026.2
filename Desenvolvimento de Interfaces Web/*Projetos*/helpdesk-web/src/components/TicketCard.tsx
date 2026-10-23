@@ -1,6 +1,8 @@
+import { Link } from "react-router"
 import type { TicketStatus, TicketPriority } from "../types/Ticket"
 
 type TicketCardProps = {
+    id : number
     title :  string
     description : string
     status: TicketStatus
@@ -8,6 +10,7 @@ type TicketCardProps = {
 }
 
 export function TicketCard({
+    id,
     title,
     description,
     status,
@@ -16,6 +19,7 @@ export function TicketCard({
 
     return (
         <article className="rounded-lg bg-white p-5 shadow">
+
             <h3 className="text-lg font-semibold text-slate-900">
                 {title}
             </h3>
@@ -35,6 +39,10 @@ export function TicketCard({
                     {priority}
                 </span>
             </div>
+            <Link to={`/chamado/${id}`}
+                className = "mt-4 inline-block text-sm font-medium text-blue-600 hover:underline">
+                Ver detalhes
+            </Link>
         </article>
     )
 

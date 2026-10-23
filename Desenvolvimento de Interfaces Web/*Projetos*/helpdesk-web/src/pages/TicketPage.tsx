@@ -81,6 +81,7 @@ const [filter, setFilter] = useState<TicketFilter>("Todos")
 
               <TicketCard
                 key = {ticket.id}
+                id = {ticket.id}
                 title = {ticket.title}
                 description = {ticket.description}
                 status = {ticket.status}

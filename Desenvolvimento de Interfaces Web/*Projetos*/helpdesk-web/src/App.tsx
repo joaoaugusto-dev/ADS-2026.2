@@ -5,6 +5,7 @@ import { TicketPage } from "./pages/TicketPage"
 import { HomePage } from "./pages/HomePage"
 import { NewTicketPage } from "./pages/NewTicketPage"
 import { TicketDetailsPage } from "./pages/TicketDetailsPage"
+import { NotFoundPage } from "./pages/NotFoundPage"
 
 function App() {
 
@@ -31,6 +32,11 @@ function App() {
         <Route
           path="chamado/:id"
           element={<TicketDetailsPage />}
+        />
+
+        <Route 
+          path="*"
+          element={<NotFoundPage />}
         />
         
       </Route>
