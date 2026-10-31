@@ -48,7 +48,7 @@ export function TicketPage(){
     }
 
     loadTickets()
-  })
+  }, [])
 
   if(loading) {
     return (
@@ -59,9 +59,11 @@ export function TicketPage(){
   }
 
   if(error){
-    <div className="rounded-lg bg-red-50 p-4 text-red-700">
-      {error}
-    </div>
+    return (
+      <div className="rounded-lg bg-red-50 p-4 text-red-700">
+        {error}
+      </div>
+    )
   }
 
   return (

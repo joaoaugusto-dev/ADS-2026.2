@@ -1,4 +1,4 @@
-import type { CreateTicketInput, Ticket } from "../types/Ticket";
+import type { CreateTicketInput, Ticket, TicketPriority } from "../types/Ticket";
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -36,6 +36,22 @@ export async function getAll() : Promise<Ticket[]>{
 
 }
 
+export async function create(
+    title:string, description: string, 
+    priority: TicketPriority
+) : Promise<[]>{
+    
+const response = await fetch(
+
+        `${API_URL}/tickets`,
+        {
+            headers: getHeaders()
+        }
+    )
+
+}
+
 export const ticketService = {
-    getAll
+    getAll,
+    create
 }
